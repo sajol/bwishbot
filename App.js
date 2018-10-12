@@ -46,7 +46,7 @@ class SimpleRandomizedGreetingList extends Component {
         // Toggle the state every second
         setInterval(() => {
             this.setState(previousState => {
-                return {isShowingText: this.shuffleArray(previousState.names)};
+                return {isShowingText: SimpleRandomizedGreetingList.shuffleArray(previousState.names)};
             });
         }, 5000);
     }
@@ -68,7 +68,7 @@ class SimpleRandomizedGreetingList extends Component {
      * Randomize array element order in-place.
      * Using Durstenfeld shuffle algorithm.
      */
-    shuffleArray(array) {
+    static shuffleArray(array) {
         if (array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
